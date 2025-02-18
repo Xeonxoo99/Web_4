@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <div>div1</div>
+    <div class="divClass">div2</div>
+    <div class="divClass">div3</div>
+    <div class="divClass">div4</div>
+    <div id="one">div5</div>
+    <input type="text" name="id">
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <script>
+        // 요소명 선택
+        $('div').css('color','red');
+
+        // 클래스명 선택
+        $('.divClass').css('background-color', 'yellow');
+
+        // 아이디 선택
+        $('#one').css('font-weight', 'bold')
+
+        // 모두 선택
+        $('*').css({color:'blue',marginTop:'10px'})
+
+        // 다중 선택 (innerText)
+        $('div, p').text('다중선택')
+
+        // attribute를 이용하여 선택 .val() == value
+        $('[type=text]').val('아이디')
+
+        // 짝수번째 선택
+        $('div:even').css('background-color','green')
+
+        // 홀수번째 선택
+        $('div:odd').css('background-color','#999')
+
+        // first child등 동일하게 사용 가능
+
+        /*
+        
+            [1] 프레임워크 - 리액트
+            ㄴ 일정한 형태의 틀에 맞추어 결과물을 만들도록 하는 것
+
+            [2] 라이브러리 - 제이쿼리
+            ㄴ 자주 사용되는 로직, 코드 재사용하기 편리하도록 잘 정리한 코드들의 집합
+
+            [3] 플러그인 - 슬라이드 기능
+            ㄴ 어떤 특정한 하나의 기능을 해결하기 위한 조합
+        
+        */
+    </script>
+</body>
+</html>

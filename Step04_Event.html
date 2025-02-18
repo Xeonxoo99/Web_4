@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <button id="myBtn">CLICK</button>
+    <ul id="fList">
+        <li>짱구</li>
+        <li>짱아</li>
+        <li>흰둥이</li>
+        <li>철수</li>
+        <li>훈이</li>
+    </ul>
+
+    <script>
+        $('#myBtn').click(()=>{
+            alert('CLICK!');
+        });
+
+        $('#fList li').on('click', function () {
+            console.log(this);
+            $(this).text('CLICK').css('color','red')
+        });
+
+        // on과 click의 차이점은 거의 없음 (on method가 메모리 효율에 좋다고는 함 / 최적화가 잘된다는 뜻)
+
+        /*
+            off()
+            - 이벤트 제거 method
+        */
+
+        $('#fList li').off().on('mouseover',function(){
+            $(this).css('background-color', 'yellow')
+        });
+
+        $('#fList li').on('mouseout',function(){
+            $(this).css('background-color', 'white')
+        });
+    </script>
+</body>
+</html>

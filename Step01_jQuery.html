@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            여긴 작동 안함
+
+            $('div').fadeOut();
+        */
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        /*
+            작동은 하지만, div가 안읽힌 상태
+
+            $('div').fadeOut();
+        */
+    </script>
+</head>
+<body>
+    <div>
+        <h3>제이쿼리 링크 : https://jquery.com/</h3>
+        <br/>
+        <p>download jquery 클릭</p>
+        <br/>
+        <p>jquery CDN 클릭</p>
+        <br/>
+        <p>Google CDN 클릭</p>
+        <br/>
+        <p>Google CDN 바로가기 : https://developers.google.com/speed/libraries?hl=ko#jquery</p>
+    </div>
+    <div>
+        <h3>2. $('div')</h3>
+        <p> 첫번째 div만 fadeOut을 적용해보세요.</p>
+        <p>Hint. console창에 $('div')</p>
+    </div>
+    <div>
+        <h3 id="idH3">3. ID 선택</h3>
+    </div>
+    <div>
+        <h3 class="clsH3"> 4. Class 선택</h3>
+        <h3 class="clsH3"> 4. Class 선택</h3>
+        <p>첫번째 .clsH3만 fadeOut을 적용해보세요.</p>
+    </div>
+    <div>
+        <h3 class="clickH3">5. CLICK 이벤트</h3>
+    </div>
+    <script>
+        $('div')[0]; // document.querySelectorAll('div') 
+        $($('div')[0]).fadeOut();
+        console.log($($('div')[0]))
+
+        $('#idH3').fadeOut();
+
+        $($('.clsH3')[0]).fadeOut();
+
+        $('.clickH3').click(()=>{
+            $('.clickH3').fadeOut();
+        });
+    </script>
+</body>
+</html>

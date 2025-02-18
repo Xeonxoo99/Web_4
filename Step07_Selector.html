@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+
+    <script>
+
+        $('ul').children().text('hello'); // 자식 요소 선택
+
+        $('ul').children('li:nth-child(2)').css('color', 'red');
+
+        $('li').eq(0).css('color', 'blue');
+
+        $('li').eq(1).siblings().css('color','yellow'); // siblings : 형제 요소 선택 (본인 제외하고 모두 선택)
+
+        $('li').eq(1).next().css('color','green'); // 본인 다음 요소 선택
+
+        $('li').eq(1).prev().css('color','purple');
+
+    </script>
+</body>
+</html>

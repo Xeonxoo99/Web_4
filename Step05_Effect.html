@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="hideBtn">숨기기</button>
+    <button id="showBtn">보이기</button>
+    <button id="toggleBtn">토글</button>
+    <div class="box"></div>
+
+    <script>
+
+        $('#hideBtn').on('click',function(){
+            // $('.box').css('display', 'none');
+            
+            // $('.box').hide();
+
+            /*
+                $('.box').hide({
+                    duration : 1000, // 애니 메이션 진행 시간
+                    complete : function(){ // hide()가 모두 실행 되고 난 후 작동 할 함수
+                        alert('끝')
+                    }
+                });
+            */
+            
+            // $('.box').hide(1000);
+
+            // $('.box').hide(1000, ()=>{
+            //     alert('끝');
+            // });
+
+            // $('.box').fadeOut(1000, ()=>{
+            //     alert('끝');
+            // });
+
+            $('.box').slideUp(1000);
+        });
+
+        $('#showBtn').on('click',function(){
+            // $('.box').css('display', 'block');
+
+            // $('.box').show();
+
+            // $('.box').fadeIn();
+
+            // $('.box').fadeIn(1000);
+
+            $('.box').slideDown(1000);
+        })
+
+        $('#toggleBtn').on('click',function(){
+            // $('.box').toggle(1000,()=>{
+            //     console.log('Toggle');
+            // });
+
+            // $('.box').fadeToggle(1000);
+
+            $('.box').slideToggle(1000);
+        })
+    </script>
+</body>
+</html>
