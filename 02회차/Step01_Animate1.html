@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    
+    <script>
+        
+        $('.box').on('click',function(){
+            /*
+                .animate( object, number, function )
+
+                object => css 속성
+                number => duration 지속시간
+                function => 애니메이션 끝난 후 작동할 코드
+            */
+           $(this).animate(
+            {
+                width:"200px",
+                height:"200px",
+                marginLeft:"+=200px",
+                "font-size" : "50px"
+            }, 1000, function(){
+                $(this).text('End!')
+            })
+        });
+
+    </script>
+</body>
+</html>

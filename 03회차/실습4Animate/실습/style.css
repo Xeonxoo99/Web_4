@@ -1,0 +1,104 @@
+body, ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    list-style-type: none;
+}
+
+body {
+
+    background-color: #333; 
+}
+
+.wrapper {
+
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -300px;
+    margin-left: -450px;
+}
+
+.gallery {
+
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.gallery li {
+	overflow:hidden;
+	display:none;
+    margin: 6px;
+    cursor: pointer;
+    border: 5px solid #000;
+
+    /*CSS3*/
+    box-sizing: border-box;
+}
+
+.gallery li:hover {
+
+}
+
+.gallery.side-a li {
+
+    float: right;
+}
+
+.gallery.side-b li {
+	
+    float: left;
+}
+
+.gallery.side-b {
+
+
+	position:relative;
+	top:30px;
+}
+
+
+.type-a {}
+.type-b {}
+.type-c {}
+
+
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    top값과 opacity값을 원하는대로 수정하세요.
+*/
+.gallery li.type-b img{
+	position : relative;
+
+
+}
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    opacity값을 원하는대로 수정하세요.
+*/
+.gallery li.type-a img{
+
+}
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    이미지 위치를 조정하세요.
+*/
+.gallery li.type-c{
+	overflow:visible;
+	background-color:#999;
+}
+
+.gallery li.type-c .inner{
+	
+	pointer-events:none;
+}

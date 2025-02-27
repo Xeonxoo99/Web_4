@@ -1,0 +1,128 @@
+body, ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    list-style-type: none;
+}
+
+body {
+
+    background-color: #333; 
+}
+
+.wrapper {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -300px;
+    margin-left: -450px;
+}
+
+.gallery {
+
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.gallery li {
+	overflow:hidden;
+	display:none;
+    margin: 6px;
+    cursor: pointer;
+    border: 5px solid #000;
+
+    /*CSS3*/
+    box-sizing: border-box;
+}
+
+.gallery li:hover {
+
+}
+
+.gallery.side-a li {
+
+    float: right;
+}
+
+.gallery.side-b li {
+	
+    float: left;
+}
+
+.gallery.side-b {
+
+
+	position:relative;
+	top:30px;
+}
+
+
+.type-a {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.type-b {
+    width: 210px;
+    height: 70px;
+}
+
+.type-c {
+    width: 340px;
+    height: 120px;
+    font-size: 4em;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    color: #ddd;
+    line-height: 100px;
+    text-align: center;
+}
+
+
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    top값과 opacity값을 원하는대로 수정하세요.
+
+*/
+.gallery li.type-b img{
+	position : relative;
+    top: -40px;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    opacity값을 원하는대로 수정하세요.
+*/
+.gallery li.type-a img{
+    opacity: 0.5;
+}
+
+/*
+    jQuery 애니메이션을 주기 위하여
+    이미지 위치를 조정하세요.
+*/
+.gallery li.type-c{
+	overflow:visible;
+    position: relative;
+	background-color:#999;
+}
+
+.gallery li.type-c .inner{
+    position: absolute;
+	pointer-events:none;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+}

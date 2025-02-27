@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .box{
+            background-color: red;
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div</div>
+
+    <script>
+        $('.box').width(100);
+        $('.box').height(100);
+
+        console.log($('.box').innerWidth(100));
+        console.log($('.box').outerWidth(100));
+    </script>
+</body>
+</html>

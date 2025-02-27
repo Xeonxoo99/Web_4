@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+        #one{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper"></div>
+    </div>
+    <script>
+        $('<img>')
+        .attr('src','images/icon1.png')
+        .attr('title', '마리오 이미지')
+        .appendTo('.container')
+
+        const div = $('<div>')
+            .text('마리오')
+            .addClass('active')
+            .attr('id','one')
+
+            
+    </script>
+</body>
+</html>

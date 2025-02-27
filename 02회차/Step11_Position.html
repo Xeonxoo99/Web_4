@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            height: 0;
+            background: yellow;
+            position: relative;
+            left: 200px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+
+    <script>
+
+        // [ Position ]
+        // 부모를 기준으로 요소가 위치한 x,y 위치값을 구해주는 메서드
+
+        console.log($('.box').position());
+        $('.box').text(`left:${$('box')}`)
+
+    </script>
+</body>
+</html>

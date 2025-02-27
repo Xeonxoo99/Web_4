@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px; height: 100px; background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+
+    <script>
+
+        /*
+        
+            [ Stop ]
+            
+            현재 진행 중인 애니메이션 중지 시켜줌
+        
+        */
+
+        $('div').on('mouseenter', function(){
+            $(this).stop().animate({marginLeft:50})
+        })
+
+        $('div').on('mouseleave', function(){
+            $(this).stop().animate({marginLeft:0})
+        })
+    </script>
+</body>
+</html>

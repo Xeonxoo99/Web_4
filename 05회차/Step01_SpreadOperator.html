@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        
+            [ SpreadOperator ]
+
+            괄호를 제거 해주는 연산자
+
+            Array나 obj 자료형을 합치거나 복사할 때 사용
+            오브젝트 중괄호 내, 어레이 대괄호 내에서 사용
+
+        */
+
+        const myArr = ['짱구','짱아']
+        console.log(...myArr)
+
+        // 어레이 합치기
+
+        const a = [1,2,3];
+        const b = [4,5];
+        const c = [...a, ...b];
+
+        // 어레이 복사
+        const d = [1,2,3];
+        const e = [...d];
+
+        e[0] = 4;
+
+        // 오브젝트
+        const o1 = {qa:b3}
+        const o2 = {...o1, a:3}
+
+        // 마잠ㄱ에 나오는 key값으로 적용
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body, ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    list-style-type: none;
+}
+
+img {
+
+    vertical-align: bottom;
+}
+
+body {
+
+    background-color: #c3edfe;
+    background-image: url(bg.png);
+    background-position: center bottom;
+    background-attachment: fixed;
+    color: #000;
+}
+
+.wrapper {
+
+    width: 600px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.wrapper .face {
+
+    overflow: hidden;
+	
+}
+
+.wrapper .face li {
+
+    float: left;
+	position:relative;
+}
+
+.wrapper .tabs {
+
+    overflow: hidden;
+}
+
+.wrapper .tabs li {
+
+    width: 33.3%;
+    height: 100px;
+    float: left;
+    cursor: pointer;
+    font-size: 40px;
+    line-height: 140px;
+    font-family: 'Lobster', cursive;
+    background-image: url(pipe-white.png);
+    color: #666;
+	
+}
+
+
+.wrapper .tabs li:hover {
+
+    color: green; 
+}
+/*
+    active시에
+    백그라운드 이미지를 pipe.png로 바꾸고
+    폰트칼라를 d3ffdf로 넣어주세요.
+*/
+.wrapper .tabs li.active {
+
+}
+
+.wrapper .contents {
+
+    background-color: green;
+    position: relative;
+    border-bottom: 3px solid #003300;
+    border-radius: 10px;
+}
+
+.wrapper .contents li {
+	display:none;
+	position:absolute;
+}
+
+.wrapper .contents li img {
+
+    margin: 20px;
+    border-bottom: 3px solid #003300;
+    border-radius: 10px;
+}

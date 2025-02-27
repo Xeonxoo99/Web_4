@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            [ 얕은 복사 ]
+            객체의 참조값을 복사
+        */
+
+        const original1 = {
+            name : '짱구',
+            age : 5,
+            address : {
+                city : '떡잎마을',
+                zip : '12345',
+            }
+        };
+
+        // spread Operaotr 얕은 복사
+        const scopy = {...original1};
+
+        // 참조된 객체가 원본에 영향을 미침
+        scopy.name = '철수'; // 영향 x
+        scopy.address.city = '팡팡유치원' // 영향 o
+        console.log(original1)
+        console.log(scopy)
+
+        /*
+            [ 깊은 복사 ]
+            객체의 실제 값을 모두 복사
+        */
+
+        const original2 = {
+            name : '짱구',
+            age : 5,
+            address : {
+                city : '떡잎마을',
+                zip : '12345',
+            }
+        };
+
+        // JSON을 사용한 깊은 복사
+        /*
+            JSON.stringify() : 객체 -> 문자열
+            JSON.parse() : 문자열 -> 객체
+        */
+
+        const dcopy = JSON.parse(JSON.stringify(original2));
+
+        dcopy.name = '흰둥이'
+        dcopy.address.city = '강아지집'
+        console.log(original2)
+        console.log(dcopy)
+    </script>
+</body>
+</html>
