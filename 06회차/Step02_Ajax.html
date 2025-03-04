@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 비동기 ]
+
+            - 시간이 걸리는 작업
+
+            서버에 데이터를 요청하는 것도 비동기 작업임
+
+        */
+
+        // 서버로부터 데이터를 가져오거나 보내는 용도로 사용
+        // fetch는 자동으로 new Promise 적용
+        fetch('https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js')
+        .then((res)=>{
+            if(!res.ok){
+                // 만약 응답이 정상적이지 않다면 에러 발생시키기
+                throw new Error('네트워크 응답 문제!')
+            }
+            // json파일을 가져왔다 -> res.json;
+            return res.text();
+        })
+        .then((script)=>{
+            console.log(script);
+        })
+        .catch((Error)=>{
+            console.log(`실패!! : ${Error}`)
+        })
+
+        fetch('detil.son')
+        .then((res)=>res.json)
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log('실패함')
+        })
+    </script>
+</body>
+</html>

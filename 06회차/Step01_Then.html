@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 동기처리 ]
+
+            위에서부터 아래로 순차적으로 처리 되는 것
+
+            1. console.log(1);
+            2. console.log(2);
+        */
+       
+        /*
+        
+            [ 비동기 처리 ]
+
+            순차적으로 처리되지 않는 것
+
+            setTimeout, setInterval, addEventListener 등등
+
+            [ 콜백함수 ]
+
+            - 함수의 파라미터(인자)로 전달 되는 함수
+            - 함수의 실행이 끝나면 호출 되는 함수
+
+        */
+
+        const fun1 = (callback)=>{
+            console.log('먼저 실행');
+            callback();
+        }
+
+        const callback = () => {
+            console.log('나중에 실행')
+        }
+
+        fun1(callback)
+
+        /*
+        
+            [ then ]
+            
+            - 비동기 작업이 성공 했을 때 실행되는 콜백함수
+            - Promise 객체를 반환하는 함수를 호출하여 비동기 작업을 수행
+
+        */
+
+        const func2 = new Promise((resolve)=>{
+            console.log('먼저 실행')
+            resolve();
+        }).then(()=>{
+            console.log('나중에 실행')
+        })
+    </script>
+</body>
+</html>
