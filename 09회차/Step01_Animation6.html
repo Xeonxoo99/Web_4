@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        const box = document.querySelector('.box')
+
+        const animation = box.animate(
+            [
+                {
+                    transform : 'translateX(0px)',
+                },
+                {
+                    transform : 'translateX(300px)',
+                }
+            ],
+            {
+                duration: 1000,
+                fill: 'forwards'
+            }
+        )
+
+        /*
+            animate() 메서드는 Animation 인스턴스를 반환
+            Animation 인스턴스.finished : 애니메이션이 완료되었을 때 발생하는 이벤트 ( Promise 객체 리턴)
+            Animation 인스턴스.finished.then() : 애니메이션이 완료되었을 때 실행되는 
+        */
+
+        animation.finished.then((data)=>{
+            console.log(data)
+            box.style.backgroundColor = 'green'
+        })
+
+        animation.ready.then((data)=>{
+            console.log(data)
+            box.style.backgroundColor = 'red'
+        })
+    </script>
+</body>
+</html>

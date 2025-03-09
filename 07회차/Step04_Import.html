@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+
+        import {a as c,b} from './export.js'
+        console.log(a) // afmf C를,
+        console.log(b)
+
+        import {add as add1, mulitply} from './export.js'
+
+        const num = add1(5,3);
+        console.log(num)
+
+        // export default 사용 시
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-origin: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+
+        box.animate(
+            [
+                {
+                    transform: 'translateX(0) scale(0.5)',
+                    backgroundColor : 'yellow'
+                },
+
+                {
+                    transform: 'translateX(200px) scale(1)',
+                    backgroundColor : 'red',
+                    // offset : 애니메이션 진행 상태 (0 ~ 1)
+                    // 0.9는 90% 진행상태
+                    offset : 0.9
+                },
+
+                {
+                    transform: 'translateX(100px) scale(1.5)',
+                    backgroundColor : 'blue'
+                }
+            ],
+            {
+                duration: 2000,
+                dalay: 1000,
+                iterations: 1,
+                direction: 'alternate',
+                easing: 'ease-in-out',
+                /*
+                    [ fill ]
+                    none : 애니메이션이 완료되면 원래상태로 돌아감
+                    forwards : 애니메이션이 완료되면 마지막 키프레임의 상태를 유지함
+                    backwards : 애니메이션이 완료되면 애니메이션이 시작되기 전의 첫번쨰 키레임의 상태 유지
+                    
+                    both : 애니메이션이 완료되면 마지막 키프레임의 상태를 유지하고 , 애니메이션이 시작되기 전에 첫 번째 키프레임 상태를 유지
+                */
+               fill : 'backwards'
+            }
+        )
+    </script>
+</body>
+
+</html>

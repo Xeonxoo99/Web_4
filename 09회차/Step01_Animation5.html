@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            position: fixed;
+            top: 100px;
+            left: 0;
+        }
+        #demo{
+            /* background-color: lightcoral; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div id="demo"></div>
+    <script>
+
+        /*
+            전체 스크롤 비율을 계산하여 그 비율에 따라 애니메이션 적용
+
+            - 스크롤이 0% 일때 0px, 100%라면 * 5 = 500px 이동
+            - 스크롤이 0% 일때 scale 1, 100%라면 * 2 = 2
+            - 스크롤이 0% 일때 opacity 1, 100%라면 * 0 = 0
+        */
+        const box = document.querySelector('.box')
+        const scrollMax = document.body.offsetHeight - window.innerHeight;
+        window.addEventListener('scroll',()=>{
+            // 스크롤 퍼센트 구하기
+            const scrollpercent = window.scrollY / scrollMax
+
+            // 최댓값
+            const maxTranslateX = 500;
+            
+            // 비율에 따라 값 변경
+            const translateXValue = maxTranslateX * scrollpercent
+            const scaleValue = 1 + scrollpercent;
+            const opacityValue = 1 - scrollpercent;
+
+            document.getElementById('demo').innerHTML = `${parseInt(translateXValue)}`
+            const animation = box.animate (
+                [
+                    { 
+                        transform : `translateX(${parseInt(translateXValue)}px) scale(${scaleValue})`,
+                        opacity : opacityValue
+                    }
+                ],
+                {
+                    // 사용하지 않으면 원래 상태로 계속 돌아감
+                    fill : 'forwards',
+                }
+            )
+            /*
+                권장 사항 : 즉시 애니메이션 효과 적용
+                delay, easing, duration 무시
+            */
+            animation.finish();
+        })
+    </script>
+</body>
+
+</html>

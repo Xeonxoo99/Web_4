@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 3000px;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        const box = document.querySelector('.box');
+
+        window.addEventListener('scroll',()=>{
+            let scrollY = window.scrollY;
+
+            console.log(scrollY);
+
+            const animation = box.animate (
+                [
+                    { transform : `translateX(${scrollY}px)`}
+                ],
+                {
+                    // 사용하지 않으면 원래 상태로 계속 돌아감
+                    fill : 'forwards',
+                    delay : 2000
+                }
+            )
+            /*
+                권장 사항 : 즉시 애니메이션 효과 적용
+                delay, easing, duration 무시
+            */
+            animation.finish();
+        })
+    </script>
+</body>
+</html>

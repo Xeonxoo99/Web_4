@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_New.html</title>
+</head>
+<body>
+    <script>
+        /*
+        
+            [  ]
+        
+        */
+
+        const str1 = new String(123); // new 생략
+        const num1 = new Number(123); // new 생략
+
+        const obj1 = {}; // 권장사항, 성능면에서 유리
+        const obj2 = new Object(); // 생성자 함수 사용(함수명의 첫 글자가 대문자인 경우?);
+
+        const arr1 = []; // 권장사항
+        const arr2 = new Array();
+
+        // 5개의 빈 요소가 있는 배열 생성
+        const arr3 = new Array(5);
+        console.log(arr3);
+
+        // 여러 요소를 가진 배열 생성
+        const arr4 = new Array(1,2,3,4,5);
+        console.log(arr4);
+
+        // 현재 날짜, 시간
+        const now = new Date();
+
+        // 정규표현식
+        const regex = new RegExp('sbs', 'i')
+
+        // ERROR
+
+        try {
+            throw new Error('에러')
+        }catch(e){
+            console.log(e)
+        }
+
+        const map = new Map();
+
+        new Promise((res,rej)=>{
+
+        });
+
+        const clickEvent = new Event('click');
+
+        const img = new Image(); // 생성 시 크기 지정 가능
+        img.src = 'images/curby.jpg';
+        console.log(img);
+        
+    </script>
+</body>
+</html>

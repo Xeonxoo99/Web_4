@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            __prototim
+        */
+
+        function Attend(n,a){
+            this.name = n;
+            this.age = a;
+        }
+
+        Attend.prototype.school = '팡팡유치원'
+
+        const parent = {name : '짱구'};
+        const child = {};
+
+        child.__proto__ = Attend.prototype;
+        console.log(child.school)
+    </script>
+</body>
+</html>
