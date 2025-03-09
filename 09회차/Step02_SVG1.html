@@ -38,22 +38,21 @@
     </svg>
 
     <script>
+        const path = document.querySelector('path');
+        const scrollMax = document.body.offsetHeight - window.innerHeight;
+        const maxOffset = 870;
         window.addEventListener('scroll', () => {
-            const path = document.querySelector('path')
-            // 스크롤 비율
-            const scrollY = window.scrollY;
-            const scrollpercent = parseInt(scrollY / scrollMax * 100);
+            const scrollpercent = window.scrollY / scrollMax * 100;
+            console.log(parseInt(scrollpercent));
 
             // stroke-dashoffset
-            const dashOffest = 870;
+            const dashOffsetValue = maxOffset * (1 - scrollpercent / 100);
             
-            const dashOffestValue = dashOffest * scrollpercent
-
 
             const animation = path.animate(
                 [
                     {
-                        strokeDashoffset : `${-dashOffestValue}`
+                        strokeDashoffset : `${dashOffsetValue}`
                     }
                 ],
                 {

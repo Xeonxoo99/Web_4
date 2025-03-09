@@ -14,7 +14,7 @@
             top: 50px;
             left: 50px;
             transform-origin: center;
-            
+
         }
     </style>
 </head>
@@ -28,20 +28,20 @@
             [
                 {
                     transform: 'translateX(0) scale(0.5)',
-                    backgroundColor : 'yellow'
+                    backgroundColor: 'yellow'
                 },
 
                 {
                     transform: 'translateX(200px) scale(1)',
-                    backgroundColor : 'red',
+                    backgroundColor: 'red',
                     // offset : 애니메이션 진행 상태 (0 ~ 1)
                     // 0.9는 90% 진행상태
-                    offset : 0.9
+                    offset: 0.9
                 },
 
                 {
                     transform: 'translateX(100px) scale(1.5)',
-                    backgroundColor : 'blue'
+                    backgroundColor: 'blue'
                 }
             ],
             {
@@ -58,7 +58,7 @@
                     
                     both : 애니메이션이 완료되면 마지막 키프레임의 상태를 유지하고 , 애니메이션이 시작되기 전에 첫 번째 키프레임 상태를 유지
                 */
-               fill : 'backwards'
+                fill: 'backwards'
             }
         )
     </script>
